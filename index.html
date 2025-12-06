@@ -1,0 +1,1533 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechLicenças - Licenças Originais Windows e Office</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2a5298;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: #4fc3f7;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            color: #2a5298;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 1.1rem;
+        }
+        
+        nav ul li a:hover {
+            color: #4fc3f7;
+        }
+        
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #ff5252;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #2a5298;
+        }
+        
+        /* Banner Promocional */
+        .promo-banner {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 0.9; }
+            50% { opacity: 1; }
+            100% { opacity: 0.9; }
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: white;
+            border-radius: 15px;
+            padding: 50px;
+            margin: 30px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: #2a5298;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: #666;
+        }
+        
+        .highlight {
+            color: #f5576c;
+            font-weight: 700;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-small {
+            padding: 8px 20px;
+            font-size: 0.9rem;
+        }
+        
+        .btn-buy {
+            background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+        }
+        
+        /* Product Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #f5576c;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 1;
+        }
+        
+        .product-img {
+            height: 180px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+        }
+        
+        .product-info {
+            padding: 25px;
+        }
+        
+        .product-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #2a5298;
+        }
+        
+        .product-description {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            min-height: 60px;
+        }
+        
+        .product-price {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        
+        .price-main {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #f5576c;
+        }
+        
+        .price-old {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 1rem;
+        }
+        
+        /* Modal do Carrinho */
+        .cart-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            max-width: 500px;
+            background: white;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            z-index: 2000;
+            overflow-y: auto;
+        }
+        
+        .cart-modal.active {
+            display: block;
+        }
+        
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .cart-header h3 {
+            font-size: 1.5rem;
+        }
+        
+        .close-cart {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .cart-items {
+            padding: 20px;
+            max-height: 60vh;
+            overflow-y: auto;
+        }
+        
+        .cart-item {
+            display: flex;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+        
+        .cart-item-img {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 1.5rem;
+            color: white;
+        }
+        
+        .cart-item-info {
+            flex: 1;
+        }
+        
+        .cart-item-info h4 {
+            margin-bottom: 5px;
+            color: #2a5298;
+            font-size: 1rem;
+        }
+        
+        .cart-item-price {
+            font-weight: 600;
+            color: #f5576c;
+            font-size: 1.2rem;
+        }
+        
+        .cart-item-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .quantity-btn {
+            background: #f8f9fa;
+            border: none;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .quantity-input {
+            width: 40px;
+            height: 30px;
+            border: none;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .remove-item {
+            background: none;
+            border: none;
+            color: #ff5252;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+        
+        .cart-footer {
+            padding: 20px;
+            border-top: 2px solid #eee;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: white;
+        }
+        
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #2a5298;
+        }
+        
+        .cart-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .cart-buttons .btn {
+            flex: 1;
+            text-align: center;
+        }
+        
+        /* Seção de Benefícios */
+        .benefits {
+            background: white;
+            border-radius: 15px;
+            padding: 50px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .benefits h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #2a5298;
+            font-size: 2.2rem;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .benefit-item {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .benefit-icon {
+            font-size: 2.5rem;
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        
+        .benefit-item h3 {
+            margin-bottom: 10px;
+            color: #2a5298;
+        }
+        
+        /* Modal de Escolha de Pagamento */
+        .payment-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 3000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .payment-modal.active {
+            display: flex;
+        }
+        
+        .payment-content {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            animation: fadeIn 0.3s;
+        }
+        
+        .payment-content h3 {
+            margin-bottom: 20px;
+            color: #2a5298;
+        }
+        
+        .payment-options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .payment-option {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .payment-option:hover {
+            border-color: #667eea;
+            background: rgba(102, 126, 234, 0.05);
+        }
+        
+        .payment-option.selected {
+            border-color: #667eea;
+            background: rgba(102, 126, 234, 0.1);
+        }
+        
+        .payment-icon {
+            font-size: 2rem;
+            margin-right: 15px;
+            color: #667eea;
+        }
+        
+        .payment-info {
+            text-align: left;
+            flex: 1;
+        }
+        
+        .payment-info h4 {
+            margin-bottom: 5px;
+            color: #2a5298;
+        }
+        
+        .payment-info p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Footer */
+        footer {
+            background: #2a5298;
+            color: white;
+            padding: 60px 0 30px;
+            margin-top: 60px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #4fc3f7;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: #4fc3f7;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Overlay para modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1500;
+        }
+        
+        .modal-overlay.active {
+            display: block;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-wrap: wrap;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            nav {
+                width: 100%;
+                display: none;
+                margin-top: 20px;
+            }
+            
+            nav.active {
+                display: block;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .hero {
+                padding: 30px 20px;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .cart-modal {
+                width: 100%;
+                max-width: 100%;
+            }
+            
+            .benefits {
+                padding: 30px 20px;
+            }
+            
+            .benefits h2 {
+                font-size: 1.8rem;
+            }
+            
+            .payment-content {
+                width: 95%;
+                padding: 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .product-img {
+                height: 150px;
+                font-size: 3rem;
+            }
+            
+            .btn {
+                padding: 10px 25px;
+            }
+            
+            .cart-buttons {
+                flex-direction: column;
+            }
+            
+            .price-main {
+                font-size: 1.5rem;
+            }
+            
+            .payment-options {
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fab fa-windows"></i>
+                    <span>TechLicenças</span>
+                </div>
+                
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                
+                <nav>
+                    <ul>
+                        <li><a href="#home">Início</a></li>
+                        <li><a href="#windows">Windows</a></li>
+                        <li><a href="#office">Office</a></li>
+                        <li><a href="#benefits">Vantagens</a></li>
+                        <li class="cart-icon" id="openCart">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Banner Promocional -->
+    <div class="promo-banner">
+        <div class="container">
+            🎉 PROMOÇÃO ESPECIAL! Licenças ORIGINAIS com garantia vitalícia 🎉
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Licenças Originais de Windows e Office</h1>
+            <p>Compre <span class="highlight">licenças originais e ativações permanentes</span> com os melhores preços do mercado. Ativação imediata após o pagamento!</p>
+            <p><strong>Windows 8 a partir de R$ 45,00 | Office 2013 a partir de R$ 60,00</strong></p>
+            <a href="#windows" class="btn">Ver Licenças</a>
+        </div>
+    </section>
+
+    <!-- Produtos Windows -->
+    <section class="container" id="windows">
+        <h2 style="text-align: center; margin-bottom: 30px; color: white; font-size: 2.2rem;">Licenças Windows</h2>
+        <div class="products-grid">
+            <!-- Windows 8 -->
+            <div class="product-card">
+                <div class="product-badge">MAIS VENDIDO</div>
+                <div class="product-img">
+                    <i class="fab fa-windows"></i>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Windows 8.1 Pro</h3>
+                    <p class="product-description">Licença original do Windows 8.1 Professional. Ativação permanente via chave digital.</p>
+                    <div class="product-price">
+                        <div>
+                            <div class="price-main">R$ 45,00</div>
+                            <div class="price-old">R$ 89,90</div>
+                        </div>
+                        <button class="btn btn-small add-to-cart" 
+                                data-id="win81" 
+                                data-name="Windows 8.1 Pro" 
+                                data-price="45.00" 
+                                data-img="windows"
+                                data-link="https://loja.infinitepay.io/tecshop/ipc9156-licenca-do-windows-8-pro">
+                            Comprar
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Windows 10 -->
+            <div class="product-card">
+                <div class="product-badge">OFERTA</div>
+                <div class="product-img">
+                    <i class="fab fa-windows"></i>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Windows 10 Pro</h3>
+                    <p class="product-description">Licença original do Windows 10 Professional. Compatível com atualização para Windows 11.</p>
+                    <div class="product-price">
+                        <div>
+                            <div class="price-main">R$ 89,90</div>
+                            <div class="price-old">R$ 149,90</div>
+                        </div>
+                        <button class="btn btn-small add-to-cart" 
+                                data-id="win10" 
+                                data-name="Windows 10 Pro" 
+                                data-price="89.90" 
+                                data-img="windows"
+                                data-link="https://loja.infinitepay.io/tecshop/win10-pro">
+                            Comprar
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Windows 11 -->
+            <div class="product-card">
+                <div class="product-badge">LANÇAMENTO</div>
+                <div class="product-img">
+                    <i class="fab fa-windows"></i>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Windows 11 Pro</h3>
+                    <p class="product-description">Licença original do Windows 11 Professional. Última versão com todas as funcionalidades.</p>
+                    <div class="product-price">
+                        <div>
+                            <div class="price-main">R$ 129,90</div>
+                            <div class="price-old">R$ 199,90</div>
+                        </div>
+                        <button class="btn btn-small add-to-cart" 
+                                data-id="win11" 
+                                data-name="Windows 11 Pro" 
+                                data-price="129.90" 
+                                data-img="windows"
+                                data-link="https://loja.infinitepay.io/tecshop/win11-pro">
+                            Comprar
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Windows Server -->
+            <div class="product-card">
+                <div class="product-img">
+                    <i class="fas fa-server"></i>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Windows Server 2019</h3>
+                    <p class="product-description">Licença para servidores. Ideal para empresas e infraestrutura corporativa.</p>
+                    <div class="product-price">
+                        <div>
+                            <div class="price-main">R$ 399,90</div>
+                        </div>
+                        <button class="btn btn-small add-to-cart" 
+                                data-id="winserver" 
+                                data-name="Windows Server 2019" 
+                                data-price="399.90" 
+                                data-img="server"
+                                data-link="https://loja.infinitepay.io/tecshop/windows-server">
+                            Comprar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Produtos Office -->
+    <section class="container" id="office">
+        <h2 style="text-align: center; margin-bottom: 30px; color: white; font-size: 2.2rem; margin-top: 60px;">Licenças Office</h2>
+        <div class="products-grid">
+            <!-- Office 2013 -->
+            <div class="product-card">
+                <div class="product-badge">ECONÔMICO</div>
+                <div class="product-img" style="background: linear-gradient(135deg, #d53369 0%, #daae51 100%);">
+                    <i class="fas fa-file-word"></i>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Office 2013 Professional</h3>
+                    <p class="product-description">Pacote completo com Word, Excel, PowerPoint, Outlook. Licença vitalícia.</p>
+                    <div class="product-price">
+                        <div>
+                            <div class="price-main">R$ 60,00</div>
+                            <div class="price-old">R$ 129,90</div>
+                        </div>
+                        <button class="btn btn-small add-to-cart" 
+                                data-id="office2013" 
+                                data-name="Office 2013 Professional" 
+                                data-price="60.00" 
+                                data-img="office"
+                                data-link="https://loja.infinitepay.io/tecshop/office-2013">
+                            Comprar
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Office 2016 -->
+            <div class="product-card">
+                <div class="product-badge">MAIS VENDIDO</div>
+                <div class="product-img" style="background: linear-gradient(135deg, #d53369 0%, #daae51 100%);">
+                    <i class="fas fa-file-excel"></i>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Office 2016 Professional</h3>
+                    <p class="product-description">Versão estável e completa do pacote Office. Inclui todas as aplicações.</p>
+                    <div class="product-price">
+                        <div>
+                            <div class="price-main">R$ 89,90</div>
+                            <div class="price-old">R$ 159,90</div>
+                        </div>
+                        <button class="btn btn-small add-to-cart" 
+                                data-id="office2016" 
+                                data-name="Office 2016 Professional" 
+                                data-price="89.90" 
+                                data-img="office"
+                                data-link="https://loja.infinitepay.io/tecshop/office-2016">
+                            Comprar
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Office 2019 -->
+            <div class="product-card">
+                <div class="product-badge">RECOMENDADO</div>
+                <div class="product-img" style="background: linear-gradient(135deg, #d53369 0%, #daae51 100%);">
+                    <i class="fas fa-file-powerpoint"></i>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Office 2019 Professional</h3>
+                    <p class="product-description">Versão mais recente do pacote Office. Compatível com Windows 10/11.</p>
+                    <div class="product-price">
+                        <div>
+                            <div class="price-main">R$ 129,90</div>
+                            <div class="price-old">R$ 199,90</div>
+                        </div>
+                        <button class="btn btn-small add-to-cart" 
+                                data-id="office2019" 
+                                data-name="Office 2019 Professional" 
+                                data-price="129.90" 
+                                data-img="office"
+                                data-link="https://loja.infinitepay.io/tecshop/office-2019">
+                            Comprar
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Office 2021 -->
+            <div class="product-card">
+                <div class="product-badge">LANÇAMENTO</div>
+                <div class="product-img" style="background: linear-gradient(135deg, #d53369 0%, #daae51 100%);">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Office 2021 Professional</h3>
+                    <p class="product-description">Última versão do pacote Office. Todas as funcionalidades atualizadas.</p>
+                    <div class="product-price">
+                        <div>
+                            <div class="price-main">R$ 189,90</div>
+                            <div class="price-old">R$ 299,90</div>
+                        </div>
+                        <button class="btn btn-small add-to-cart" 
+                                data-id="office2021" 
+                                data-name="Office 2021 Professional" 
+                                data-price="189.90" 
+                                data-img="office"
+                                data-link="https://loja.infinitepay.io/tecshop/office-2021">
+                            Comprar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Benefícios -->
+    <section class="benefits" id="benefits">
+        <div class="container">
+            <h2>Por que comprar conosco?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Licenças Originais</h3>
+                    <p>Todas as licenças são 100% originais da Microsoft com garantia vitalícia.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Ativação Imediata</h3>
+                    <p>Receba a chave de ativação instantaneamente após a confirmação do pagamento.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Suporte 24/7</h3>
+                    <p>Equipe especializada para ajudar na instalação e ativação das licenças.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Pagamento Seguro</h3>
+                    <p>Processamento seguro com criptografia de dados e múltiplas opções de pagamento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal do Carrinho -->
+    <div class="modal-overlay" id="modalOverlay"></div>
+    
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-header">
+            <h3>Seu Carrinho</h3>
+            <button class="close-cart" id="closeCart">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Itens do carrinho serão inseridos aqui dinamicamente -->
+            <div class="empty-cart-message" id="emptyCartMessage" style="text-align: center; padding: 40px 20px; color: #666;">
+                <p>Seu carrinho está vazio</p>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">R$ 0,00</span>
+            </div>
+            <div class="cart-buttons">
+                <button class="btn btn-small" id="continueShopping" style="background: #6c757d;">Continuar Comprando</button>
+                <button class="btn btn-small" id="goToCheckout">Finalizar Compra</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Escolha de Pagamento -->
+    <div class="payment-modal" id="paymentModal">
+        <div class="payment-content">
+            <h3>Escolha o Método de Pagamento</h3>
+            <div class="payment-options">
+                <div class="payment-option" data-method="infinite">
+                    <div class="payment-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <div class="payment-info">
+                        <h4>InfinitePay</h4>
+                        <p>Pagamento seguro com cartão, PIX ou boleto</p>
+                    </div>
+                </div>
+                
+                <div class="payment-option" data-method="whatsapp">
+                    <div class="payment-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="payment-info">
+                        <h4>WhatsApp</h4>
+                        <p>Finalize pelo WhatsApp para pagamento via PIX</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="paymentButtons">
+                <!-- Botões serão inseridos aqui dinamicamente -->
+            </div>
+            
+            <button class="btn btn-small" id="closePaymentModal" style="background: #6c757d; margin-top: 15px;">Cancelar</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>TechLicenças</h3>
+                    <p>Especialistas em licenças originais da Microsoft. Preços imbatíveis e ativação garantida.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Produtos</h3>
+                    <ul>
+                        <li><a href="#windows">Licenças Windows</a></li>
+                        <li><a href="#office">Licenças Office</a></li>
+                        <li><a href="#">Pacotes Combo</a></li>
+                        <li><a href="#">Produtos em Oferta</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Atendimento</h3>
+                    <ul>
+                        <li><i class="fas fa-whatsapp"></i> (11) 99999-9999</li>
+                        <li><i class="fas fa-envelope"></i> suporte@techlicencas.com.br</li>
+                        <li><i class="fas fa-clock"></i> Atendimento 24h</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Formas de Pagamento</h3>
+                    <ul>
+                        <li><i class="fas fa-credit-card"></i> Cartão de Crédito</li>
+                        <li><i class="fas fa-barcode"></i> PIX</li>
+                        <li><i class="fas fa-money-bill-wave"></i> Boleto</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 TechLicenças - Todos os direitos reservados. Windows e Office são marcas registradas da Microsoft Corporation.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Sistema de Carrinho com Links Específicos
+        class ProductCart {
+            constructor() {
+                this.cart = JSON.parse(localStorage.getItem('techlicencas_cart')) || [];
+                this.selectedProduct = null; // Produto selecionado para pagamento
+                this.updateCartCount();
+                this.initEventListeners();
+                this.renderCartItems();
+            }
+            
+            initEventListeners() {
+                // Abrir/fechar carrinho
+                document.getElementById('openCart').addEventListener('click', () => this.openCart());
+                document.getElementById('closeCart').addEventListener('click', () => this.closeCart());
+                document.getElementById('continueShopping').addEventListener('click', () => this.closeCart());
+                document.getElementById('modalOverlay').addEventListener('click', () => this.closeCart());
+                
+                // Botões "Comprar" - Agora com data-link
+                document.querySelectorAll('.add-to-cart').forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        const product = {
+                            id: e.target.dataset.id,
+                            name: e.target.dataset.name,
+                            price: parseFloat(e.target.dataset.price),
+                            img: e.target.dataset.img,
+                            link: e.target.dataset.link,
+                            quantity: 1
+                        };
+                        this.addToCart(product);
+                    });
+                });
+                
+                // Finalizar compra
+                document.getElementById('goToCheckout').addEventListener('click', () => this.showPaymentOptions());
+                
+                // Modal de pagamento
+                document.getElementById('closePaymentModal').addEventListener('click', () => this.closePaymentModal());
+                document.querySelectorAll('.payment-option').forEach(option => {
+                    option.addEventListener('click', (e) => {
+                        this.selectPaymentMethod(e.currentTarget.dataset.method);
+                    });
+                });
+            }
+            
+            openCart() {
+                document.getElementById('cartModal').classList.add('active');
+                document.getElementById('modalOverlay').classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+            
+            closeCart() {
+                document.getElementById('cartModal').classList.remove('active');
+                document.getElementById('modalOverlay').classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+            
+            addToCart(product) {
+                const existingItem = this.cart.find(item => item.id === product.id);
+                
+                if (existingItem) {
+                    existingItem.quantity += 1;
+                } else {
+                    this.cart.push(product);
+                }
+                
+                this.saveCart();
+                this.updateCartCount();
+                this.renderCartItems();
+                this.showNotification(`${product.name} foi adicionado ao carrinho!`);
+                
+                // Abre o carrinho automaticamente
+                this.openCart();
+            }
+            
+            removeFromCart(productId) {
+                this.cart = this.cart.filter(item => item.id !== productId);
+                this.saveCart();
+                this.updateCartCount();
+                this.renderCartItems();
+            }
+            
+            updateQuantity(productId, newQuantity) {
+                if (newQuantity < 1) {
+                    this.removeFromCart(productId);
+                    return;
+                }
+                
+                const item = this.cart.find(item => item.id === productId);
+                if (item) {
+                    item.quantity = newQuantity;
+                    this.saveCart();
+                    this.renderCartItems();
+                }
+            }
+            
+            saveCart() {
+                localStorage.setItem('techlicencas_cart', JSON.stringify(this.cart));
+            }
+            
+            updateCartCount() {
+                const totalItems = this.cart.reduce((sum, item) => sum + item.quantity, 0);
+                document.querySelector('.cart-count').textContent = totalItems;
+            }
+            
+            renderCartItems() {
+                const cartItemsContainer = document.getElementById('cartItems');
+                const emptyCartMessage = document.getElementById('emptyCartMessage');
+                const cartTotal = document.getElementById('cartTotal');
+                
+                if (this.cart.length === 0) {
+                    emptyCartMessage.style.display = 'block';
+                    cartItemsContainer.innerHTML = '';
+                    cartItemsContainer.appendChild(emptyCartMessage);
+                    cartTotal.textContent = 'R$ 0,00';
+                    return;
+                }
+                
+                emptyCartMessage.style.display = 'none';
+                
+                let itemsHTML = '';
+                let total = 0;
+                
+                this.cart.forEach(item => {
+                    const itemTotal = item.price * item.quantity;
+                    total += itemTotal;
+                    
+                    itemsHTML += `
+                        <div class="cart-item">
+                            <div class="cart-item-img">
+                                <i class="fas fa-${item.img === 'windows' ? 'windows' : item.img === 'server' ? 'server' : 'file-alt'}"></i>
+                            </div>
+                            <div class="cart-item-info">
+                                <h4>${item.name}</h4>
+                                <div class="cart-item-price">R$ ${item.price.toFixed(2).replace('.', ',')}</div>
+                            </div>
+                            <div class="cart-item-actions">
+                                <div class="quantity-control">
+                                    <button class="quantity-btn minus" data-id="${item.id}">-</button>
+                                    <input type="text" class="quantity-input" value="${item.quantity}" data-id="${item.id}">
+                                    <button class="quantity-btn plus" data-id="${item.id}">+</button>
+                                </div>
+                                <button class="remove-item" data-id="${item.id}">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                cartItemsContainer.innerHTML = itemsHTML;
+                cartTotal.textContent = `R$ ${total.toFixed(2).replace('.', ',')}`;
+                
+                // Adiciona eventos para os botões
+                cartItemsContainer.querySelectorAll('.quantity-btn.minus').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const productId = e.target.dataset.id;
+                        const item = this.cart.find(item => item.id === productId);
+                        if (item) this.updateQuantity(productId, item.quantity - 1);
+                    });
+                });
+                
+                cartItemsContainer.querySelectorAll('.quantity-btn.plus').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const productId = e.target.dataset.id;
+                        const item = this.cart.find(item => item.id === productId);
+                        if (item) this.updateQuantity(productId, item.quantity + 1);
+                    });
+                });
+                
+                cartItemsContainer.querySelectorAll('.quantity-input').forEach(input => {
+                    input.addEventListener('change', (e) => {
+                        const productId = e.target.dataset.id;
+                        const newQuantity = parseInt(e.target.value) || 1;
+                        this.updateQuantity(productId, newQuantity);
+                    });
+                });
+                
+                cartItemsContainer.querySelectorAll('.remove-item').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const productId = e.target.closest('.remove-item').dataset.id;
+                        this.removeFromCart(productId);
+                    });
+                });
+            }
+            
+            showPaymentOptions() {
+                if (this.cart.length === 0) {
+                    this.showNotification('Adicione produtos ao carrinho antes de finalizar a compra');
+                    return;
+                }
+                
+                // Fecha o carrinho
+                this.closeCart();
+                
+                // Mostra modal de pagamento
+                document.getElementById('paymentModal').classList.add('active');
+                
+                // Cria botões de pagamento dinamicamente
+                const paymentButtons = document.getElementById('paymentButtons');
+                paymentButtons.innerHTML = '';
+                
+                // Se houver mais de um produto, mostra opção de WhatsApp para compra múltipla
+                if (this.cart.length > 1) {
+                    paymentButtons.innerHTML = `
+                        <button class="btn btn-buy" id="whatsappMulti">Comprar Todos via WhatsApp (PIX)</button>
+                        <p style="margin: 10px 0; color: #666; font-size: 0.9rem;">Ou selecione um produto específico:</p>
+                    `;
+                    
+                    document.getElementById('whatsappMulti').addEventListener('click', () => {
+                        this.processMultiWhatsAppOrder();
+                    });
+                }
+                
+                // Cria botões para cada produto no carrinho
+                this.cart.forEach((item, index) => {
+                    const button = document.createElement('button');
+                    button.className = 'btn btn-buy';
+                    button.style.marginTop = '10px';
+                    button.style.width = '100%';
+                    button.innerHTML = `${item.name} - R$ ${(item.price * item.quantity).toFixed(2).replace('.', ',')}`;
+                    button.dataset.index = index;
+                    
+                    button.addEventListener('click', (e) => {
+                        const productIndex = parseInt(e.target.dataset.index);
+                        this.selectedProduct = this.cart[productIndex];
+                        this.showNotification(`Produto selecionado: ${this.selectedProduct.name}`);
+                        
+                        // Remove seleção anterior
+                        document.querySelectorAll('.payment-option').forEach(opt => {
+                            opt.classList.remove('selected');
+                        });
+                    });
+                    
+                    paymentButtons.appendChild(button);
+                });
+            }
+            
+            selectPaymentMethod(method) {
+                // Remove seleção anterior
+                document.querySelectorAll('.payment-option').forEach(opt => {
+                    opt.classList.remove('selected');
+                });
+                
+                // Adiciona seleção ao método clicado
+                document.querySelector(`.payment-option[data-method="${method}"]`).classList.add('selected');
+                
+                if (method === 'infinite' && this.selectedProduct) {
+                    // Redireciona para o link do InfinitePay do produto selecionado
+                    window.open(this.selectedProduct.link, '_blank');
+                    this.closePaymentModal();
+                    this.showNotification(`Redirecionando para pagamento do ${this.selectedProduct.name}`);
+                } else if (method === 'whatsapp' && this.selectedProduct) {
+                    // Cria mensagem para WhatsApp para produto específico
+                    this.processSingleWhatsAppOrder();
+                }
+            }
+            
+            processSingleWhatsAppOrder() {
+                if (!this.selectedProduct) {
+                    this.showNotification('Selecione um produto primeiro');
+                    return;
+                }
+                
+                let message = "Olá! Gostaria de comprar a seguinte licença:\n\n";
+                message += `Produto: ${this.selectedProduct.name}\n`;
+                message += `Quantidade: ${this.selectedProduct.quantity}\n`;
+                message += `Valor unitário: R$ ${this.selectedProduct.price.toFixed(2)}\n`;
+                message += `Total: R$ ${(this.selectedProduct.price * this.selectedProduct.quantity).toFixed(2)}\n`;
+                message += "\nPor favor, me informe como proceder com o pagamento via PIX.";
+                
+                // Codifica a mensagem para URL
+                const encodedMessage = encodeURIComponent(message);
+                
+                // Número de WhatsApp (substitua pelo seu)
+                const whatsappNumber = "5511999999999";
+                
+                // Abre WhatsApp
+                window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
+                this.closePaymentModal();
+            }
+            
+            processMultiWhatsAppOrder() {
+                // Calcula total
+                const total = this.cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+                
+                // Cria mensagem para WhatsApp
+                let message = "Olá! Gostaria de comprar as seguintes licenças:\n\n";
+                
+                this.cart.forEach((item, index) => {
+                    message += `${index + 1}. ${item.name} x${item.quantity} - R$ ${(item.price * item.quantity).toFixed(2)}\n`;
+                });
+                
+                message += `\nTotal: R$ ${total.toFixed(2)}\n`;
+                message += "\nPor favor, me informe como proceder com o pagamento via PIX.";
+                
+                // Codifica a mensagem para URL
+                const encodedMessage = encodeURIComponent(message);
+                
+                // Número de WhatsApp (substitua pelo seu)
+                const whatsappNumber = "5511999999999";
+                
+                // Abre WhatsApp
+                window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
+                this.closePaymentModal();
+            }
+            
+            closePaymentModal() {
+                document.getElementById('paymentModal').classList.remove('active');
+                this.selectedProduct = null;
+                
+                // Limpa seleções
+                document.querySelectorAll('.payment-option').forEach(opt => {
+                    opt.classList.remove('selected');
+                });
+            }
+            
+            showNotification(message) {
+                // Cria notificação
+                const notification = document.createElement('div');
+                notification.style.cssText = `
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    background: #667eea;
+                    color: white;
+                    padding: 15px 20px;
+                    border-radius: 5px;
+                    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+                    z-index: 9999;
+                    font-weight: 500;
+                    animation: slideIn 0.3s, fadeOut 0.3s 2.7s;
+                `;
+                
+                notification.textContent = message;
+                document.body.appendChild(notification);
+                
+                setTimeout(() => {
+                    notification.remove();
+                }, 3000);
+            }
+            
+            // Método para compra direta (sem carrinho)
+            buyDirect(productId) {
+                const product = this.getProductById(productId);
+                if (product) {
+                    this.selectedProduct = product;
+                    // Redireciona direto para o link de pagamento
+                    window.open(product.link, '_blank');
+                    this.showNotification(`Redirecionando para pagamento do ${product.name}`);
+                }
+            }
+            
+            getProductById(productId) {
+                // Encontra produto pelo ID nos botões da página
+                const button = document.querySelector(`.add-to-cart[data-id="${productId}"]`);
+                if (button) {
+                    return {
+                        id: button.dataset.id,
+                        name: button.dataset.name,
+                        price: parseFloat(button.dataset.price),
+                        img: button.dataset.img,
+                        link: button.dataset.link,
+                        quantity: 1
+                    };
+                }
+                return null;
+            }
+        }
+        
+        // Inicializa o carrinho
+        document.addEventListener('DOMContentLoaded', () => {
+            const cart = new ProductCart();
+            
+            // Menu mobile
+            document.querySelector('.mobile-menu').addEventListener('click', function() {
+                document.querySelector('nav').classList.toggle('active');
+            });
+            
+            // Smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    if (this.getAttribute('href') === '#') return;
+                    
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Fecha menu mobile se aberto
+                        document.querySelector('nav').classList.remove('active');
+                    }
+                });
+            });
+            
+            // Adiciona botões de compra direta (opcional)
+            // Exemplo: <button onclick="cart.buyDirect('win81')" class="btn btn-buy">Comprar Agora</button>
+            
+            // Adiciona estilo para animação
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes slideIn {
+                    from { transform: translateX(100%); opacity: 0; }
+                    to { transform: translateX(0); opacity: 1; }
+                }
+                @keyframes fadeOut {
+                    from { opacity: 1; }
+                    to { opacity: 0; }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            // Torna o cart global para acesso pelos botões
+            window.cart = cart;
+        });
+    </script>
+</body>
+</html>
